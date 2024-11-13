@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true">
+    <TextView
+        android:id="@+id/linea"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grisclaro"
+        app:layout_constraintBottom_toTopOf="@+id/nav_view"
+        />
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        app:itemBackground="@android:color/transparent"
+        android:id="@+id/nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/menu_bottom"
+        android:background="@color/white"
+        android:duplicateParentState="true"
+        app:itemIconTint="@color/selector_color_menu"
+        app:itemTextColor="@color/selector_color_menu"
+        app:itemActiveIndicatorStyle="@android:color/background_light"
+        />
+    <FrameLayout
+        android:id="@+id/fragment_menu"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/linea"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
