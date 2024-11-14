@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/itemAddProject"
+        android:icon="@drawable/icon_adduser"
+        android:title="Añadir Miembros"
+        />
+
+    <item
+        android:id="@+id/itemEditProject"
+        android:icon="@drawable/icon_edit"
+        android:title="Editar Proyecto"
+        />
+
+    <item
+        android:id="@+id/itemDeleteProject"
+        android:icon="@drawable/icon_delete"
+        android:title="Eliminar Proyecto"
+        />
+</menu>
