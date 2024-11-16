@@ -52,7 +52,7 @@
             app:boxCornerRadiusBottomStart="10dp"
             app:boxCornerRadiusTopEnd="10dp"
             app:boxCornerRadiusTopStart="10dp"
-            app:boxStrokeColor="@color/white"
+            app:boxStrokeColor="@color/black"
             app:boxStrokeWidth="1dp"
             app:endIconMode="clear_text"
             app:endIconTint="@color/white"
@@ -65,7 +65,7 @@
                 android:layout_height="wrap_content"
                 android:hint="Nombre de usuario"
                 android:inputType="text"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="18dp"
                 android:textColorHint="@color/black" />
 
@@ -90,8 +90,8 @@
             app:boxStrokeColor="@color/white"
             app:boxStrokeWidth="1dp"
             app:endIconMode="clear_text"
-            app:endIconTint="@color/white"
-            app:hintTextColor="@color/white">
+            app:endIconTint="@color/black"
+            app:hintTextColor="@color/black">
 
 
             <com.google.android.material.textfield.TextInputEditText
@@ -100,7 +100,7 @@
                 android:layout_height="wrap_content"
                 android:hint="N° DNI"
                 android:inputType="text"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="18dp"
                 android:textColorHint="@color/black" />
 
@@ -125,8 +125,8 @@
             app:boxStrokeColor="@color/white"
             app:boxStrokeWidth="1dp"
             app:endIconMode="clear_text"
-            app:endIconTint="@color/white"
-            app:hintTextColor="@color/white">
+            app:endIconTint="@color/black"
+            app:hintTextColor="@color/black">
 
 
             <com.google.android.material.textfield.TextInputEditText
@@ -135,7 +135,7 @@
                 android:layout_height="wrap_content"
                 android:hint="correo@gmail.com"
                 android:inputType="textEmailAddress"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="18dp"
                 android:textColorHint="@color/black" />
 
@@ -160,8 +160,8 @@
             app:boxStrokeColor="@color/white"
             app:boxStrokeWidth="1dp"
             app:endIconMode="password_toggle"
-            app:endIconTint="@color/white"
-            app:hintTextColor="@color/white">
+            app:endIconTint="@color/black"
+            app:hintTextColor="@color/black">
 
 
             <com.google.android.material.textfield.TextInputEditText
@@ -170,7 +170,7 @@
                 android:layout_height="wrap_content"
                 android:hint="Contraseña"
                 android:inputType="textPassword"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="18dp"
                 android:textColorHint="@color/black" />
 
@@ -195,8 +195,8 @@
             app:boxStrokeColor="@color/white"
             app:boxStrokeWidth="1dp"
             app:endIconMode="password_toggle"
-            app:endIconTint="@color/white"
-            app:hintTextColor="@color/white">
+            app:endIconTint="@color/black"
+            app:hintTextColor="@color/black">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtRPassword"
@@ -204,7 +204,7 @@
                 android:layout_height="wrap_content"
                 android:hint="Confirmar contraseña"
                 android:inputType="textPassword"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="18dp"
                 android:textColorHint="@color/black" />
 

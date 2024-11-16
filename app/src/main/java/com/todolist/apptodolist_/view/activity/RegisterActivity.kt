@@ -1,4 +1,4 @@
-package com.todolist.apptodolist_.view.activity.activity
+package com.todolist.apptodolist_.view.activity
 
 import android.app.ProgressDialog
 import android.content.Intent
@@ -6,10 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.todolist.apptodolist_.R
 import com.todolist.apptodolist_.databinding.ActivityRegisterBinding
-import com.todolist.apptodolist_.view.activity.MainActivity
-import com.todolist.apptodolist_.view.activity.MenuActivity
 import com.todolist.apptodolist_.view.activity.viewmodel.RegisterViewModel
 
 class RegisterActivity : AppCompatActivity() {
@@ -51,7 +48,7 @@ class RegisterActivity : AppCompatActivity() {
         viewModel.userRegisterStatus.observe(this) { status ->
             if (status) {
                 progressDialog.dismiss()
-                startActivity(Intent(this, MenuActivity::class.java))
+                startActivity(Intent(this, LoginActivity::class.java))
                 finish()
             }else{
                 progressDialog.dismiss()
