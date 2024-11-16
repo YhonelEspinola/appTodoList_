@@ -67,16 +67,16 @@
             app:boxStrokeColor="@color/white"
             app:boxStrokeWidth="1dp"
             app:endIconMode="clear_text"
-            app:endIconTint="@color/white"
-            app:hintTextColor="@color/white">
+            app:endIconTint="@color/black"
+            app:hintTextColor="@color/black">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="correo@gmail.com"
                 android:inputType="textEmailAddress"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
                 android:textSize="18sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -106,27 +106,26 @@
             app:boxCornerRadiusTopStart="10dp"
             app:boxStrokeColor="@color/white"
             app:endIconMode="password_toggle"
-            app:endIconTint="@color/white"
-            app:hintTextColor="@color/white">
+            app:endIconTint="@color/black"
+            app:hintTextColor="@color/black">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="*********"
                 android:inputType="textPassword"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
                 android:textSize="18sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
+            android:id="@+id/txtOlvidarContra"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:text="Olvidé mi cuenta"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:gravity="start" />
+            android:layout_marginBottom="25dp"
+            android:layout_marginStart="80dp"
+            android:text="Olvide mi Contraseña"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnLogin"
@@ -145,27 +144,26 @@
             app:iconSize="30dp"/>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:orientation="horizontal"
-            android:padding="10dp">
+            android:layout_marginTop="25dp"
+            android:gravity="center">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="¿No tienes una cuenta?"
+                android:text="¿No tienes cuenta?"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:id="@+id/textRegistrarse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Registrate ahora"
                 android:textStyle="bold"
-                android:textColor="@color/black"/>
+                android:textSize="16sp"
+                android:layout_marginStart="10dp"/>
 
-            <TextView
-                android:id="@+id/txtRegister"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:text="Registrate"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
