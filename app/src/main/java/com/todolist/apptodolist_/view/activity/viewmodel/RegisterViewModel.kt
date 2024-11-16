@@ -40,7 +40,10 @@ class RegisterViewModel:ViewModel() {
         }else if (password.length < 6){
             passwordError.value = "Contraseña muy corta, ingrese 6 o mas caracteres"
             userRegisterStatus.value = false
-        } else if (cPassword.isEmpty()){
+        }else if (!contraseñaSegura(password)) {
+            passwordError.value = "La contraseña debe contener al menos una mayúscula, un número y un carácter especial"
+            userRegisterStatus.value = false
+        }else if (cPassword.isEmpty()){
             cPasswordError.value = "Repita la Contraseña"
             userRegisterStatus.value = false
         }else if (password != cPassword){
@@ -51,17 +54,50 @@ class RegisterViewModel:ViewModel() {
         }
     }
 
+    private fun contraseñaSegura(password: String): Boolean {
+        val mayuscula = password.any { it.isUpperCase() }
+        val numero = password.any { it.isDigit() }
+        val caracterEspecial = password.any { "!@#$%^&*()_+-=[]|,./?><".contains(it) }
+
+        return mayuscula && numero && caracterEspecial
+    }
+
+    private fun sugerenciaNombre(usuario: String): String {
+        val randomNumber = (1000..9999).random()
+        return "$usuario$randomNumber"
+    }
+
     private fun registrarUsuario(usuario: String,dni: String,correo: String, password: String) {
-        firebaseAuth = FirebaseAuth.getInstance()
-        firebaseAuth.createUserWithEmailAndPassword(correo,password)
-            .addOnCompleteListener {task ->
-                if (task.isSuccessful){
-                    insertarInfoBD(usuario,dni,correo)
-                }else{
+        val db = FirebaseFirestore.getInstance()
+
+        db.collection("usuarios").whereEqualTo("nombre",usuario)
+            .get().addOnSuccessListener { userdocuments ->
+                if (!userdocuments.isEmpty){
+                    val sugerenciaUsuario = sugerenciaNombre(usuario)
+                    usuarioError.value = "El nombre de usuario '$usuario' no esta disponible. ¿Qué tal '$sugerenciaUsuario'?"
                     userRegisterStatus.value = false
-                    mensajeError.value = "Error al registrar: ${task.exception?.message}"
+                }else {
+                    db.collection("usuarios").whereEqualTo("dni",dni)
+                        .get().addOnSuccessListener { dnidocuments ->
+                            if (!dnidocuments.isEmpty){
+                                dniError.value = "El DNI ingresado ya se encuentra registrado."
+                                userRegisterStatus.value = false
+                            } else{
+                                firebaseAuth = FirebaseAuth.getInstance()
+                                firebaseAuth.createUserWithEmailAndPassword(correo,password)
+                                    .addOnCompleteListener {task ->
+                                        if (task.isSuccessful){
+                                            insertarInfoBD(usuario,dni,correo)
+                                        }else{
+                                            correoError.value = "Email ya se encuentra registrado."
+                                            userRegisterStatus.value = false
+                                        }
+                                    }
+                            }
+                        }
                 }
             }
+
     }
 
     private fun insertarInfoBD(usuario: String,dni: String, correo: String) {
