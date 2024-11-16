@@ -48,7 +48,7 @@ class RegisterActivity : AppCompatActivity() {
         viewModel.userRegisterStatus.observe(this) { status ->
             if (status) {
                 progressDialog.dismiss()
-                startActivity(Intent(this, MenuActivity::class.java))
+                startActivity(Intent(this, LoginActivity::class.java))
                 finish()
             }else{
                 progressDialog.dismiss()
