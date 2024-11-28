@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:id="@+id/cabecera"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/projectName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre del Proyecto"
+            android:textStyle="bold"
+            android:textSize="24sp"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/estadoPendiente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Estado Pendiente"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/tareaPendiente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        tools:listitem="@layout/item_estado" />
+
+    <TextView
+        android:id="@+id/estadoProgreso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Estado en Progreso"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/tareaProgreso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        tools:listitem="@layout/item_estado" />
+
+    <TextView
+        android:id="@+id/estadoCompletado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Estado Completado"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/tareaCompletada"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        tools:listitem="@layout/item_estado" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingCreateTask"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="end"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/icon_plus" />
+</LinearLayout>
